@@ -1,0 +1,46 @@
+.badge-primary.delivery_badge {
+	vertical-align: super;
+}
+
+.delete-icon {
+	text-align: right;
+}
+
+.signup-btn {
+	background-color: chocolate;
+	color: white;
+}
+
+.search-bar {
+	background-image:
+	url("https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=735&q=80");	
+}
+
+.navbar_bottom {
+	background-color: sienna;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+}
+
+.navbar_top {
+	background-color: sienna;
+	padding: 3px;
+	position: fixed;
+	width: 100%;
+}
+
+.material-icons.md-36 {
+	font-size: 35px;
+	line-height: 1.5;
+	vertical-align: middle;
+}
+
+.material-icons.other_icon {
+	line-height: 1.75;
+	vertical-align: middle;
+}
+
+.blue {
+	color: blue;
+}

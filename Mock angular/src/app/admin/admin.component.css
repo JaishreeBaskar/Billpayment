@@ -1,0 +1,14 @@
+.accept-btn {
+	background-color: green;
+    color: white;
+}
+
+.reject-btn {
+	background-color: darkred;
+    color: white;
+}
+
+.view-btn {
+	background-color: blue;
+    color: white;
+}

@@ -1,0 +1,20 @@
+<div class="row">
+    <h3 class="col-xs-10 mt-4 ml-5 mr-10">All Registered Vendor Details</h3>
+        </div>
+         <div class="col-xs-12 card mt-5 ml-5 mr-5">
+            <table class="table">
+              <tr *ngFor="let v of vendorList">
+                    <td class="ml-5">{{v.nov}}</td> 
+                    <td class="ml-5"><a [routerLink]="['/view',v.nov]"><button type="submit" class=" ml-5 btn view-btn" (click)="viewVendor">View</button></a></td>
+                    <td class="ml-5"><button type="submit" class="ml-5 btn accept-btn" (click)="accept(v)" [disabled]=" this.v.status==true">Accept</button></td>
+                    <td class="ml-5"><button type="submit" class="ml-5 btn reject-btn" (click)="onDeleteVendor(v.nov)">Reject</button></td>
+                        </tr>
+              </table>
+              </div>
+
+
+
+
+
+        
+      

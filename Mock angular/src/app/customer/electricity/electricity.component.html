@@ -1,0 +1,68 @@
+<div class="d-flex justify-content-center my-auto v">
+        <div class="col-md-10 mt-6">
+            <div class="card my-5">
+				<h1 class="mt-3 ml-5" id="sign">Bill Details</h1>
+                <form [formGroup]="electricityForm" >
+                        
+                    <div class="row mt-5 ml-5 mr-5">
+                        <div class="col-12">
+              <label for="vendorname">Vendor Name</label> 
+              <input type="text" class="form-control" placeholder="Enter Vendor Name" formControlName="vendorname" id="vendorname">
+              <br>
+              <div class="alert alert-danger" *ngIf="vendorname.invalid && vendorname.errors.required && vendorname.touched">Vendor Name is required</div>
+                        </div>
+                    </div>
+                    <div class="row mt-5 ml-5 mr-5">
+                        <div class="col-12">
+              <label for="amount">Amount to be Paid</label> 
+              <input type="text" class="form-control" placeholder="" formControlName="amount" id="amount">
+              <br>
+              <div class="alert alert-danger" *ngIf="amount.invalid && amount.errors.required && amount.touched">Amount is required</div>
+              
+                        </div>
+                    </div>
+
+                    <div class="row mt-5 ml-5 mr-5">
+                            <div class="col-12">
+                                    <label for="billtype">Bill Type</label>
+                                    <select class="form-control" id="billtype" formControlName="billtype">
+                                            <option value ="Electricity">Electricity</option>
+                                            <option value ="Telephone">  Telephone</option>
+                                            <option value ="DTH"> DTH</option>
+                                            <option value ="Insurance"> Insurance</option>
+                                            <option value ="Tax"> Tax</option>
+                                            <option value =" Credit Card">  Credit Card</option>
+                                            <option value ="Loan account">  Loan account</option>
+                                            <option value ="Others"> Others</option>                                       
+                            
+                                    </select>
+                                <br>
+                                    <div class="alert alert-danger" *ngIf="billtype.invalid && billtype.errors.required && billtype.touched">Bill Type is required</div>
+                            </div>
+                        </div>
+                        
+                    <div class="row mt-5 ml-5 mr-5">
+                        <div class="col-12">
+                                <label for="payment">Payment Method</label>
+                                <select class="form-control" (change)="paym($event)" id="payment" formControlName="payment">
+                                    <option value="" disabled>Select Payment Method</option>
+                                    <option *ngFor="let pay of option" value="{{pay}}"> 
+                                        {{pay}}
+                                    </option>
+                                         
+                            </select>
+                            <br>
+                                <div class="alert alert-danger" *ngIf="payment.invalid && payment.errors.required && payment.touched">Payment Method is required</div>
+                        </div>
+                    </div>
+                    <div class="row mt-5 ml-5 mr-5 mb-5">
+                        <div class="col-6">
+                                <button type="submit" class="btn signup-btn" [disabled]="!electricityForm.valid" (click)="rprt()">Pay</button> 
+                        </div> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    

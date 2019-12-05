@@ -1,0 +1,64 @@
+<div class="d-flex justify-content-center my-auto v">
+    <div class="col-md-10 mt-6">
+        <div class="card my-5">
+            <h2 class="mt-5 ml-5">Credit/debit card</h2>
+            <form [formGroup]="payForm">
+                <div class="row ml-5 mr-5">
+                    <div class="col-md-6 col-xs-12 mt-5">
+            <label for="cname"><b>Name on Card</b></label>
+            <input type="text" class="form-control" placeholder="Enter Name" formControlName="cname" id="cname" required>
+            <div class="alert alert-danger" *ngIf="cname.touched && cname.invalid && cname.errors.required">Name is required</div>
+            <div class="alert alert-danger" *ngIf="cname.invalid && cname.touched">
+              Invalid name
+            </div>
+          </div>
+                <div class="col-md-6 col-xs-12 mt-5">
+            <label for="ccnum"><b>Credit card number</b></label>
+           <input type="text" class="form-control" placeholder="Enter Card Number" formControlName="ccnum" id="ccnum" required>
+            <div class="alert alert--danger" *ngIf="ccnum.touched && ccnum.invalid && ccnum.errors.required">Card Number is required</div>
+            <div class="alert alert-danger" *ngIf="ccnum.invalid && ccnum.touched">
+              invalid number
+            </div>
+            </div>
+            </div>
+            <div class="row ml-5 mr-5">
+                <div class="col-md-6 col-xs-12 mt-5">
+            <label for="expmonth"><b>Expiry Month</b></label>
+             <input type="text" class="form-control" placeholder="Enter expiry month" formControlName="expmonth" id="expmonth" required>
+            <div class="alert alert-danger" *ngIf="expmonth.touched && expmonth.invalid && expmonth.errors.required">Exp month is required</div>
+            <div class="alert alert-danger" *ngIf="expmonth.invalid && expmonth.touched">
+              invalid month
+            </div>
+          </div>
+                <div class="col-md-6 col-xs-12 mt-5">
+                <label for="expyear"><b>Expiry Year</b></label>
+                 <input type="text" class="form-control" placeholder="Enter Expiry Year" formControlName="expyear" id="expyear" required>
+            <div class="alert alert-danger" *ngIf="expyear.touched && expyear.invalid && expyear.errors.required">Expiry year is required</div>
+            <div class="alert alert-danger" *ngIf="expyear.invalid && expyear.touched">
+              invalid year
+            </div>  
+          </div>
+        </div>
+        <div class="row ml-5 mr-5">
+              <div class="col-md-6 col-xs-12 mt-5">
+                  <label for="cvv"><b>CVV</b></label>
+    <input type="text" class="form-control" placeholder="Enter CVV" formControlName="cvv" id="cvv" required>
+            <div class="alert alert-danger" *ngIf="cvv.touched && cvv.invalid && cvv.errors.required">CVV is required</div>
+            <div class="alert alert-danger" *ngIf="cvv.invalid && cvv.touched">
+              invalid cvv
+            </div>   
+          </div>
+            </div>
+            <div class="row mt-5 ml-5 mr-5 mb-5">
+                <div class="col-6">
+                    <button type="submit" [disabled]="!payForm.valid" (click)="pay()" class="btn c">Pay</button>
+                </div>
+            </div>
+            </form>
+          </div>
+    </div>
+    </div>
+    <br>
+    
+    
+    

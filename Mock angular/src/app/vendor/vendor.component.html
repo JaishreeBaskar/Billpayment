@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-sm-10 mt-5 ml-5 mr-5 mb-5 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center c">Vendors</h3>
+            </div>
+            <div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor="let vendor of vendList">       
+                        <div class="gray">
+                            {{vendor.nov}}
+                            <button type="submit" class="float-right btn btn-secondary" [routerLink]="['/edit',vendor.nov]">
+                                Edit
+                            </button> 
+                     
+                             <button [disabled]="vendor.nov== this.authService.username"(click)= "removeFromVendor(vendor.nov)" class="float-right mr-2">
+                                <i class="material-icons gray" >delete_forever</i></button> 
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

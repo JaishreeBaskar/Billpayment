@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center my-auto">
+        <div class="col-md-10 mt-6">
+            <div class="card my-5">
+            <h2 class="mt-5 ml-5">Internet Banking</h2>
+            <form [formGroup]="payForm">
+                <div class="row ml-5 mr-5">
+                    <div class="col-md-6 col-xs-12 mt-5">
+            <label for="cname"><b>Name on Card</b></label>
+            <input type="text" class="form-control" placeholder="Enter Name" formControlName="cname" id="cname" required>
+            <div class="alert alert-danger" *ngIf="cname.touched && cname.invalid && cname.errors.required">Name is required</div>
+            <div class="alert alert-danger" *ngIf="cname.invalid && cname.touched">
+                Invalid Name
+              </div>
+                    </div>
+                <div class="col-md-6 col-xs-12 mt-5">
+            <label for="acnum"><b>Account number</b></label>
+           <input type="text" class="form-control" placeholder="Enter Account Number" formControlName="acnum" id="acnum" required>
+            <div class="alert alert-danger" *ngIf="acnum.touched && acnum.invalid && acnum.errors.required">Account Number is required</div>
+            <div class="alert alert-danger" *ngIf="acnum.invalid && acnum.touched">
+                Invalid Number
+              </div>  
+          </div>
+          </div>
+          <div class="row ml-5 mr-5">
+              <div class="col-md-6 col-xs-12 mt-5">
+                <label for="pass"><b>Password</b></label>
+    <input type="text" class="form-control" placeholder="Enter Password" formControlName="pass" id="pass" required>
+            <div class="alert alert-danger" *ngIf="pass.touched && pass.invalid && pass.errors.required">Password is required</div>
+            <div class="alert alert-danger" *ngIf="pass.invalid && pass.touched">
+                Invalid Password
+              </div>    
+          </div>
+            </div>
+            <div class="row mt-5 ml-5 mr-5 mb-5">
+                <div class="col-6">
+                    <button type="submit" [disabled]="!payForm.valid" (click)="pay()" class="btn c">Pay</button>
+                </div>
+            </div>
+            </form>
+          </div>
+    </div>
+    </div>
+    <br>
+    
+    
+    

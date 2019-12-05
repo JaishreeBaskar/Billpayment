@@ -1,0 +1,28 @@
+
+.material-icons.md-36 {
+	font-size: 35px;
+	line-height: 1.5;
+	vertical-align: middle;
+}
+
+.material-icons.other_icon {
+	line-height: 1.75;
+	vertical-align: middle;
+}
+
+.register-btn {
+	background-color: chocolate;
+	color: white;
+}
+
+.reset-btn {
+	background-color: chocolate;
+    color: white;
+    float: right;
+}
+
+.barv {
+	background-image:
+	url("https://images.unsplash.com/photo-1487147264018-f937fba0c817?ixlib=rb-1.2.1");	
+	height: 55em;
+}

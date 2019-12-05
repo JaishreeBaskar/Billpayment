@@ -1,0 +1,118 @@
+<div class="row barc">
+  <div class="col-xs-10 mt-3 ml-5 mr-5 mb-3 mx-auto">
+    <div class="card mt-2">
+      <h3 class="mt-4 ml-5 mr-5">Registration Form for Customer </h3>
+      <form [formGroup]="signUpFormCus" (submit)="addUser()">
+          <div class="col-lg-11 alert alert-danger mx-3" *ngIf="userCreated == false">
+              {{this.error}}
+            </div>
+            <div class="col-lg-11 alert alert-success mx-3" *ngIf="userCreated == true">
+              {{this.error}}
+            </div>
+            <div class="row mt-5 ml-5 mr-5">
+                <div class="alert-danger col-12 px-auto" *ngIf="signUpFormCus.get('userid').hasError('useridTaken')">
+                  This Id already exists.
+                </div>
+              </div>
+        <div class="row ml-5 mr-5">
+          <div class="col-md-6 col-xs-12 mt-3">
+            <label for="firstname"><b>First Name</b></label>
+            <input type="text" class="form-control" placeholder="Enter First Name" formControlName="firstname"
+              id="firstname">
+            <div class="text-danger" *ngIf="firstname.invalid && firstname.errors.required && firstname.touched">First
+              Name is required</div>
+              <div class="text-danger" *ngIf="firstname.invalid && firstname.touched"> Only 50 characters allowed</div>
+          </div>
+          <div class="col-md-6 col-xs-12 mt-3">
+            <label for="lastname"><b>Last Name</b></label>
+            <input type="text" class="form-control" placeholder="Enter Last Name" formControlName="lastname"
+              id="lastname">
+            <div class="text-danger" *ngIf="lastname.invalid && lastname.errors.required && lastname.touched">Last
+              Name is required</div>
+              <div class="text-danger" *ngIf="lastname.invalid && lastname.touched">Only 50 characters allowed</div>
+          </div>
+        </div>
+
+
+        <div class="row ml-5 mr-5">
+          <div class="col-md-6 col-xs-12 mt-3">
+            <label for="age"><b>Age</b></label>
+            <input type="text" class="form-control" placeholder="Enter Age" formControlName="age" id="age">
+            <div class="text-danger" *ngIf="age.invalid && age.errors.required && age.touched">Age
+              is required</div>
+              <div class="text-danger" *ngIf="age.invalid && age.touched">Only 2 digit numeric values are allowed</div>
+          </div>
+        </div>
+
+        <div class="row ml-5 mr-5">
+          <div class="col-md-6 col-xs-12 mt-3">
+            <label for="gender"><b>Gender</b></label>
+            <br>
+            <select style="width: 200px;" formControlName="gender" id="gender">
+              <option [ngValue]="null" disabled [selected]="true">Select your gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+            <div class="text-danger" *ngIf="gender.invalid && gender.errors.required && gender.touched">Gender
+              is required</div>
+          </div>
+        </div>
+
+        <div class="row ml-5 mr-5">
+          <div class="col-md-6 col-xs-12 mt-3">
+            <label for="contact"><b>Contact Number</b></label>
+            <input type="text" class="form-control" placeholder="Enter Contact Number" formControlName="contact"
+              id="contact">
+              <div class="text-danger" *ngIf="contact.invalid && contact.touched">Only digits
+                  is allowed</div>
+          </div>
+          <div class="col-md-6 col-xs-12 mt-3">
+              <label for="pan"><b>PAN</b></label>
+              <input type="text" class="form-control" placeholder="Enter PAN details" formControlName="pan" id="pan">
+              <div class="text-danger" *ngIf="pan.invalid && pan.errors.required && pan.touched">PAN
+                is required</div>
+                <div class="text-danger" *ngIf="pan.invalid && pan.touched">Only 15 characters allowed</div>
+            </div>
+        </div>
+
+        <div class="row ml-5 mr-5">
+          <div class="col-md-6 col-xs-12 mt-3">
+            <label for="aadharnumber"><b>Aadhar Number</b></label>
+            <input type="text" class="form-control" placeholder="Enter Aadhar Number" formControlName="aadharnumber"
+              id="aadharnumber">
+            <div class="text-danger" *ngIf="aadharnumber.invalid && aadharnumber.errors.required && aadharnumber.touched">Aadhar number
+              is required</div>
+              <div class="text-danger" *ngIf="aadharnumber.invalid && aadharnumber.touched">Only 15 characters allowed</div>
+          </div>
+        </div>
+
+
+        <div class="row ml-5 mr-5">
+          <div class="col-md-6 col-xs-12 mt-3">
+            <label for="userid"><b>UserId</b></label>
+            <input type="userid" class="form-control" placeholder="Enter UserId" formControlName="userid" id="userid">
+            <div class="text-danger" *ngIf="userid.invalid && userid.errors.required && userid.touched">UserId
+              is required</div>
+              <div class="text-danger" *ngIf="userid.invalid && userid.errors.required && userid.touched">Only 15 characters allowed</div>
+          </div>
+
+          <div class="col-md-6 col-xs-12 mt-3">
+            <label for="password"><b>Password</b></label>
+            <input type="password" class="form-control" placeholder="Enter Password" formControlName="password"
+              id="password">
+            <div class="text-danger" *ngIf="password.invalid && password.errors.required && password.touched">Password
+              is required</div>
+              <div class="text-danger" *ngIf="password.invalid && password.errors.required && password.touched">Only 15 characters allowed</div>
+          </div>
+        </div>
+        <br>
+        <div class="row mt-3 ml-5 mr-5 mb-5">
+          <div class="col-12">
+            <button type="submit" class="btn register-btn">Submit</button>
+          </div>
+        </div> 
+      </form>  
+    </div>
+    <br><br>
+  </div>
+</div>

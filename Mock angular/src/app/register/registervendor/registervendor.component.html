@@ -1,0 +1,171 @@
+ <div class="row barv">
+        <div class="col-xs-12 mt-3 ml-5 mr-5 mb-3 mx-auto">
+          <div class="card mt-2">
+            <h3 class="mt-4 ml-5 mr-5">Registration Form for Vendor </h3>
+            <form [formGroup]="signUpFormVen" (submit)="addVendor()">
+                  <div class="col-lg-11 alert alert-success mx-3" *ngIf="userCreated == true">
+                    {{this.error}}
+                  </div>
+                  <div class="row mt-5 ml-5 mr-5">
+                      <div class="alert-danger col-12 px-auto" *ngIf="signUpFormVen.get('nov').hasError('novTaken')">
+                       Name of Vendor already exists.
+                      </div>
+                    </div>
+              <div class="row ml-5 mr-5">
+                <div class="col-md-6 col-xs-12 mt-3">
+                  <label for="nov"><b>Name of the Vendor</b></label>
+                  <input type="text" class="form-control" placeholder="Enter Name of Vendor" formControlName="nov" id="nov">
+                  <div class="text-danger" *ngIf="nov.invalid && nov.errors.required && nov.touched">
+                    Name of the Vendor is required</div>
+                    <div class="text-danger" *ngIf="nov.invalid && nov.errors.required && nov.touched">
+                        Only 50 characters allowed</div>
+                </div>
+                <div class="col-md-6 col-xs-12 mt-3">
+                  <label for="comp"><b>Company Reg. No</b></label>
+                  <input type="text" class="form-control" placeholder="Enter Company Reg. No" formControlName="comp"
+                    id="comp">
+                  <div class="text-danger" *ngIf="comp.invalid && comp.errors.required && comp.touched">Company Reg.
+                    No. is required</div>
+                    <div class="text-danger" *ngIf="comp.invalid && comp.errors.required && comp.touched">
+                        Only 50 characters allowed</div>
+                </div>
+              </div>
+      
+              <div class="row ml-5 mr-5">
+                <div class="col-md-6 col-xs-12 mt-3">
+                  <label for="vendortype"><b>Vendor Type</b></label>
+                  <br>
+                  <select style="width: 200px;" formControlName="vendortype" id="vendortype">
+                      <option [ngValue]="null" disabled [selected]="true">Select vendor type</option>
+                    <option value="Electricity">Electricity</option>
+                    <option value="Telephone">Telephone</option>
+                    <option value="DTH">DTH</option>
+                    <option value="Insurance">Insurance</option>
+                    <option value="Tax">Tax</option>
+                    <option value="CreditCard">Credit Card</option>
+                    <option value="Loanaccount">Loan account</option>
+                    <option value="Others">Others</option>
+                  </select>
+                  <div class="text-danger" *ngIf="vendortype.invalid && vendortype.errors.required && vendortype.touched">
+                    Vendor Type is required</div>
+                </div>
+                <div class="col-md-6 col-xs-12 mt-3">
+                  <label for="address"><b>Address</b></label>
+                  <input type="text" class="form-control" placeholder="Enter Address" formControlName="address" id="address">
+                  <div class="text-danger" *ngIf="address.invalid && address.errors.required && address.touched">
+                    Address is required</div>
+                    <div class="text-danger" *ngIf="address.invalid && address.errors.required && address.touched">
+                        Only 50 characters allowed</div>
+                </div>
+              </div>
+      
+              <div class="row ml-5 mr-5">
+                <div class="col-md-6 col-xs-12 mt-3">
+                  <label for="country" ><b>Country</b></label>
+                  <br>
+                  <select style="width: 200px;" formControlName="country" id="country">
+                      <option [ngValue]="null" disabled [selected]="true">Select country </option>
+                    <option value="India">India</option>
+                    <option value="UnitedStates">United States</option>
+                    <option value="China">China</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Italy">Italy</option>
+                    <option value="others">Others</option>
+                  </select>
+                  <div class="text-danger" *ngIf="country.invalid && country.errors.required && country.touched">Country
+                    is required</div>
+                </div>
+                <div class="col-md-6 col-xs-12 mt-3">
+                  <label for="state"><b>State</b></label>
+                  <br>
+                  <select style="width: 200px;" formControlName="state" id="state">
+                      <option [ngValue]="null" disabled [selected]="true">Select state</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="TamilNadu">TamilNadu</option>
+                    <option value="Virginia">Virginia</option>
+                    <option value="Beijing">Beijing</option>
+                    <option value="others">Others</option>
+                  </select>
+                  <div class="text-danger" *ngIf="state.invalid && state.errors.required && state.touched">State
+                    is required</div>
+                </div>
+              </div>
+      
+              <div class="row ml-5 mr-5">
+                <div class="col-md-6 col-xs-12 mt-3">
+                  <label for="ea"><b>Email Address</b></label>
+                  <input type="text" class="form-control" placeholder="Enter Email Address" formControlName="ea" id="ea">
+                  <div class="text-danger" *ngIf="ea.invalid && ea.errors.required && ea.touched">Email
+                    Address is required</div>
+                    <div class="text-danger" *ngIf="ea.invalid && ea.errors.required && ea.touched">Email
+                        Only 15 characters allowed</div>
+                </div>
+                <div class="col-md-6 col-xs-12 mt-3">
+                  <label for="cn"><b>Contact Number</b></label>
+                  <input type="text" class="form-control" placeholder="Enter Contact Number" formControlName="cn" id="cn">
+                  <div class="text-danger" *ngIf="cn.invalid && cn.errors.required && cn.touched">Contact
+                    Number is required</div>
+                    <div class="text-danger" *ngIf="cn.invalid && cn.errors.required && cn.touched">Contact
+                        Only 15 characters allowed and Only numeric digits allowed</div>
+                </div>
+              </div>
+      
+              <div class="row ml-5 mr-5">
+                <div class="col-md-6 col-xs-12 mt-3">
+                  <label for="ws"><b>Web site</b></label>
+                  <input type="text size:100" class="form-control" placeholder="Enter Web site" formControlName="ws" id="ws">
+                  <div class="text-danger" *ngIf="ws.invalid && ws.errors.required && ws.touched">Web
+                    site is required</div>
+                    <div class="text-danger" *ngIf="ws.invalid && ws.errors.required && ws.touched">Only 15 characters allowed</div>
+                </div>
+                <div class="col-md-6 col-xs-12 mt-3">
+                    <label for="password"><b>Password</b></label>
+                    <input type="text" class="form-control" placeholder="Enter Password" formControlName="password" id="password">
+                    <div class="text-danger" *ngIf="password.invalid && password.errors.required && password.touched">Password
+                       is required</div>
+                      <div class="text-danger" *ngIf="password.invalid && password.errors.required && password.touched">Only 15 characters allowed</div>
+                  </div>
+              </div>
+      
+              <div class="row ml-5 mr-5"> 
+                  <div class="col-md-6 col-xs-12 mt-3">
+                    <label for="cid"><b>Certificate Issued Date</b></label>
+                    <input type="date" class="form-control" placeholder="Enter Certificate Issued Date" formControlName="cid" id="cid">
+                    <div class="text-danger" *ngIf="cid.invalid && cid.errors.required && cid.touched">Certificate Issued Date
+                   is required</div>
+                  </div>
+                  <div class="col-md-6 col-xs-12 mt-3">
+                    <label for="cvd"><b>Certificate Validity Date</b></label>
+                    <input type="date" class="form-control" placeholder="Enter Certificate Validity Date" formControlName="cvd" id="cvd">
+                    <div class="text-danger" *ngIf="cvd.invalid && cvd.errors.required && cvd.touched">Certificate Validity Date
+                    is required</div>
+                  </div>
+                </div>
+      
+                <div class="row ml-5 mr-5">
+                    <div class="col-md-6 col-xs-12 mt-3">
+                      <label for="yoe"><b>Year of Establishment</b></label>
+                      <input type="date" class="form-control" placeholder="Enter Year of Establishment" formControlName="yoe" id="yoe">
+                      <div class="text-danger" *ngIf="yoe.invalid && yoe.errors.required && yoe.touched">Year of Establishment
+                     is required</div>
+                    </div>
+                    <div class="col-md-6 col-xs-12 mt-3">
+                        <label for="pay"><b>Payment Gateway</b></label>
+                        <input type="text" class="form-control" placeholder="Enter Payment Gateway" formControlName="pay" id="pay">
+                        <div class="text-danger" *ngIf="pay.invalid && pay.errors.required && pay.touched">Payment Gateway
+                       is required</div>
+                       <div class="text-danger" *ngIf="pay.invalid && pay.errors.required && pay.touched">Only 15 characters allowed</div>
+                      </div>
+                    </div>
+      
+                    <div class="row mt-3 ml-5 mr-5 mb-5">
+                        <div class="col-12">
+                          <button type="submit" class="btn register-btn">Register</button>
+                          <button type="reset" class="btn reset-btn">Reset</button> 
+                        </div>
+                      </div>
+                      </form>               
+                      </div>
+                      <br><br>
+      
+       
